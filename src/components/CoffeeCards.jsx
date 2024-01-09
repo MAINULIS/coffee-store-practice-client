@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const CoffeeCards = ({ coffee, coffees, setCoffees }) => {
@@ -55,11 +56,14 @@ const CoffeeCards = ({ coffee, coffees, setCoffees }) => {
                     <p> <span className='font-semibold text-neutral-900'>About: </span>{details}</p>
                 </div>
                 <div className=" grid md:gap-4 gap-2">
-                    <button className="btn btn-primary">Edit</button>
+                    <Link to={`/updateCoffee/${_id}`}>
+                        <button className="btn btn-primary">Edit</button>
+                    </Link>
                     <button className="btn btn-primary">Details</button>
                     <button
                         onClick={() => handleDelete(_id)}
-                        className="btn btn-primary">X</button>
+                        className="btn btn-primary">X
+                        </button>
                 </div>
             </div>
         </div>
